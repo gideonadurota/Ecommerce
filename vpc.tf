@@ -41,3 +41,17 @@ resource "aws_subnet" "public-subnet-2" {
     Name = "Public subnet 2"
   }
 }
+
+#Create route table and add public route
+resource "aws_route_table" "public-route-table" {
+  vpc_id = aws_vpc.vpc.id
+
+  route {
+    cidr_block = "0.0.0.0/0"
+    gateway_id = aws_internet_gateway.internet-gateway.id
+  }
+
+  tags = {
+    Name = "Public route table"
+  }
+}
