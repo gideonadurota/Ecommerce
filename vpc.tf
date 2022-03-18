@@ -21,7 +21,9 @@ resource "aws_internet_gateway" "internet-gateway" {
 #Create public subnet 1
 resource "aws_subnet" "public-subnet-1" {
   vpc_id     = aws_vpc.vpc.id
-  cidr_block = 
+  cidr_block = var.public-subnet-1-cidr
+  availability_zone = "us-east-1a"
+  map_public_ip_on_launch = true
 
   tags = {
     Name = "Public subnet 1"
