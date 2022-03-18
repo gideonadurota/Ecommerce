@@ -29,3 +29,15 @@ resource "aws_subnet" "public-subnet-1" {
     Name = "Public subnet 1"
   }
 }
+
+#Create public subnet 2
+resource "aws_subnet" "public-subnet-2" {
+  vpc_id     = aws_vpc.vpc.id
+  cidr_block = var.public-subnet-2-cidr
+  availability_zone = "us-east-1b"
+  map_public_ip_on_launch = true
+
+  tags = {
+    Name = "Public subnet 2"
+  }
+}
