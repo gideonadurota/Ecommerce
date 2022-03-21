@@ -61,3 +61,9 @@ resource "aws_route_table_association" "public-subnet-1-public-route-table-assoc
   subnet_id      = aws_subnet.public-subnet-1.id
   route_table_id = aws_route_table.public-route-table.id
 }
+
+#Associate public-subnet-2 to public-route-table
+resource "aws_route_table_association" "public-subnet-2-public-route-table-association" {
+  subnet_id      = aws_subnet.public-subnet-2.id
+  route_table_id = aws_route_table.public-route-table.id
+}
