@@ -27,3 +27,9 @@ variable "private-subnet-2-cidr" {
     description = "This is the cidr for the private subnet 2"
     type = string
 }
+
+variable "private-subnet-2-cidr" {
+    default = "10.0.4.0/24"
+    description = "This is the cidr for the private subnet 3"
+    type = string
+}
