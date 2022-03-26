@@ -115,3 +115,4 @@ resource "aws_subnet" "private-subnet-4" {
     Name = "private subnet 4 | database tier"
   }
 }
+
