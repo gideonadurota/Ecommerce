@@ -93,7 +93,7 @@ resource "aws_subnet" "private-subnet-2" {
 }
 
 #Create the private subnet 3
-resource "aws_subnet" "private-subnet-2" {
+resource "aws_subnet" "private-subnet-3" {
   vpc_id     = aws_vpc.vpc.id
   cidr_block = var.private-subnet-3-cidr
   availability_zone = "us-east-1a"
@@ -101,5 +101,17 @@ resource "aws_subnet" "private-subnet-2" {
 
   tags = {
     Name = "private subnet 3 | database tier"
+  }
+}
+
+#Create the private subnet 4
+resource "aws_subnet" "private-subnet-4" {
+  vpc_id     = aws_vpc.vpc.id
+  cidr_block = var.private-subnet-4-cidr
+  availability_zone = "us-east-1b"
+  map_public_ip_on_launch = false
+
+  tags = {
+    Name = "private subnet 4 | database tier"
   }
 }
