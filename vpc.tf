@@ -68,6 +68,7 @@ resource "aws_route_table_association" "public-subnet-2-public-route-table-assoc
   route_table_id = aws_route_table.public-route-table.id
 }
 
+#Create the private subnet 1
 resource "aws_subnet" "private-subnet-1" {
   vpc_id     = aws_vpc.vpc.id
   cidr_block = var.private-subnet-1-cidr
@@ -76,6 +77,18 @@ resource "aws_subnet" "private-subnet-1" {
 
   tags = {
     Name = "private subnet 1 | App tier"
+  }
+}
+
+#Create the private subnet 2
+resource "aws_subnet" "private-subnet-2" {
+  vpc_id     = aws_vpc.vpc.id
+  cidr_block = var.private-subnet-2-cidr
+  availability_zone = "us-east-1b"
+  map_public_ip_on_launch = false
+
+  tags = {
+    Name = "private subnet 2 | App tier"
   }
 }
 
